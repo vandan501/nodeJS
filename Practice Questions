@@ -1,0 +1,93 @@
+const fs = require('fs');
+/**
+fs.writeFile('index1.js', '', function(err) {
+  if (err) {
+    console.log("Error creating index1.js: " + err);
+  } else {
+    console.log("index1.js file created successfully");
+  }
+});
+ */
+
+/**
+const architectureInformation = 'Node.js is built on Chrome\'s V8 JavaScript engine and uses an event-driven, non-blocking I/O model, making it lightweight and efficient. It follows the single-threaded event loop architecture that allows for handling concurrent requests efficiently.';
+
+fs.writeFile('nodejs_architecture.txt', architectureInformation, function(err) {
+  if (err) {
+    console.log("Error adding information to nodejs_architecture.txt file");
+  } else {
+    console.log("Information added successfully to nodejs_architecture.txt file");
+  }
+});
+
+
+
+// read file
+
+fs.readFile('nodejs_architecture.txt','utf-8',function(err,data){
+    if(err)
+    {
+        console.log("error occureed in reading file")
+    }
+    else{
+        console.log(data)
+        console.log("Reading files's data successfully")
+
+    }
+})
+
+
+//appending information in exesting file
+
+const additionalmsg ='Compared to other server-side languages, Node js has distinct advantages. Its asynchronous model and non-blocking 1/0 operation improve the scalability and performance of web applications built on other frameworks. Node js can easily handle multiple client requests without requiring multiple threads, consuming less menory and resources. Additionally, it is highly scalable and provides high performance. Node is is also flexible with multiple frameworks and makes the development process easier.Compared to other server-side languages, Node is has distinct ad vantages. Its asynchronous model and non-blocking 1/0 operation improve the scalability and performance of web applications built on other frameworks. Node js can easily handle multiple client requests without requiring multiple threads, consuming less memory and resources. Additionally, it is highly scalable and provides high performance. Node js is also flexible with multiple framework s and makes the development process easier.';
+fs.appendFile('nodejs_architecture.txt', additionalmsg, function(err) {
+  if (err) {
+    console.log("Error adding information to nodejs_architecture.txt file");
+  } else {
+    console.log("Information appended successfully to nodejs_architecture.txt file");
+  }
+});
+
+
+///deleting file
+fs.unlink('nodejs_architecture.txt',function(err)
+{
+  if(err)
+  {
+    console.log("Try again to delete this file")
+  }
+  else{
+    console.log("Your file deleted SuccessFully")
+  }
+})
+
+
+
+const os=require('os');
+console.log("OS Name is:"+os.type())
+console.log("OS Releaase version  is:"+os.release())
+console.log("OS Platform  is:"+os.platform())
+
+*/
+
+
+//create server 
+  const http=require('http');
+
+ const server=http.createServer((req,res)=>{
+  if(req.url =='/')
+  {
+      res.write("<h1>Hii i am happy to learn FullStack Web development from PW Skills</h1>");
+  }
+  else{
+    res.write("<h3>OOps!! Try again after few time</h3>");
+  }
+  res.end();
+})
+
+server.listen(5001);
+
+console.log("The HTTP server is running on port 5001")
+
+
+
